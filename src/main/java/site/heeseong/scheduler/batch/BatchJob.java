@@ -14,8 +14,8 @@ public class BatchJob {
     private static final String ONE_MIN = "PT1M";
 
     //초 분 시 일 월 주 년
-    @Scheduled(cron = "0/2 * * * * *")
-    @SchedulerLock(name = "scheduleTest1_schedul", lockAtMostFor = "PT2M", lockAtLeastFor = "PT1M")
+    @Scheduled(cron = "0 * 13 * * *")
+    //@SchedulerLock(name = "scheduleTest1_schedul", lockAtMostFor = "PT1M", lockAtLeastFor = "PT2M")
     public void scheduleTest1() {
         System.out.println("배치 시작1");
         try{
@@ -25,7 +25,7 @@ public class BatchJob {
         }
     }
 
-    @Scheduled(cron = "0/2 * * * * *")
+    @Scheduled(cron = "0 * 13 * * *")
     public void scheduleTest2() {
         System.out.println("배치 시작2");
     }
